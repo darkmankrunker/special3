@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>1 Month With My ❤️</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom, #000428, #004e92);
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    text-align: center;
+  }
+  h1 {
+    margin-top: 15vh;
+    font-size: 4rem;
+    text-shadow: 0 0 20px #ff69b4;
+    animation: glow 2s infinite alternate;
+  }
+  .heart-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+  .heart {
+    position: absolute;
+    font-size: 2.5rem;
+    animation: float 8s infinite linear;
+    opacity: 0.7;
+  }
+  @keyframes float {
+    0%   { transform: translateY(100vh) rotate(0deg); }
+    100% { transform: translateY(-20vh) rotate(720deg); }
+  }
+  @keyframes glow {
+    from { text-shadow: 0 0 10px #ff1493, 0 0 20px #ff1493; }
+    to   { text-shadow: 0 0 30px #ff69b4, 0 0 60px #ff1493; }
+  }
+</style>
+</head>
+<body>
+
+<div class="heart-container" id="hearts"></div>
+
+<h1>Happy 1 Month, Baby! 💕</h1>
+<p style="font-size:1.6rem; margin:30px; line-height:1.6;">
+  30 days ago my world got 1000× brighter...<br>
+  Every laugh, every late-night talk, every stolen hug...<br>
+  I fall for you harder every single day.<br><br>
+  Thank you for being mine.<br>
+  I love you more than yesterday,<br>
+  but less than tomorrow ♾️
+  I lOVE YOU DII LOOSU ❤️❤️
+</p>
+
+<script>
+  const hearts = ['❤️','💖','💗','💓','💞','💘','💝'];
+  const container = document.getElementById('hearts');
+
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.textContent = hearts[Math.floor(Math.random()*hearts.length)];
+    heart.style.left = Math.random()*100 + 'vw';
+    heart.style.animationDuration = (Math.random()*6 + 6) + 's';
+    heart.style.fontSize = (Math.random()*1.5 + 1.8) + 'rem';
+    container.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 10000);
+  }
+
+  setInterval(createHeart, 400);
+
+  // Optional: click anywhere → more hearts burst
+  document.addEventListener('click', () => {
+    for(let i=0; i<15; i++) createHeart();
+  });
+</script>
+</body>
+</html>
